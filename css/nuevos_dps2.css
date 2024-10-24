@@ -1,0 +1,122 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://i.pinimg.com/1200x/46/58/4a/46584af0336e12dba61276757a798330.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    animation: fadeIn 2s ease-in;
+}
+
+/* Animación para el body */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(252, 164, 247, 0.8); /* Color de fondo similar al primer código */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Para que el overlay no cubra este contenedor */
+    z-index: 2; /* Asegura que el contenedor esté por encima del overlay */
+    animation: fadeIn 1.5s ease-in; /* Animación para el contenedor */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    animation: fadeIn 2s ease-in; /* Animación para el título */
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    transition: border-color 0.3s; /* Agrega una transición suave para el cambio de borde */
+}
+
+/* Cambia el color del borde al enfocar */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #fcbdfc; /* Color del primer código */
+    outline: none; /* Elimina el contorno por defecto del navegador */
+}
+
+textarea {
+    resize: vertical; /* Permite el ajuste vertical del área de texto */
+}
+
+input[type="submit"] {
+    background-color: #fcbdfc; /* Color de fondo del botón de envío */
+    color: #140101; /* Color del texto del botón de envío */
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s; /* Agrega una transición suave para el color de fondo */
+}
+
+input[type="submit"]:hover {
+    background-color: #836fff; /* Color en hover del botón de envío */
+}
+
+button {
+    background-color: #6c757d; /* Color de fondo gris */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s; /* Agrega una transición suave para el color de fondo */
+}
+
+button:hover {
+    background-color: #5a6268; /* Color de fondo gris oscuro al pasar el mouse */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; /* Asegura que la superposición esté debajo del contenedor */
+}
+
+.date-input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}

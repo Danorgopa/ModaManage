@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    animation: fadeIn 2s ease-in;
+}
+
+/* Animación para el body */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.dashboard-container {
+    display: flex;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    animation: fadeInMain 1.5s ease forwards;
+}
+
+/* Animación para el contenido principal */
+@keyframes fadeInMain {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(252, 164, 247, 0.8); /* Color del primer código */
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: slideDownTopbar 1s ease-in-out;
+}
+
+/* Animación para el topbar */
+@keyframes slideDownTopbar {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.topbar h1 {
+    margin: 0;
+    color: #ffffff; /* Color del título del primer código */
+}
+
+.content {
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.doc-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.doc-table thead {
+    background-color: #fcbdfc; /* Fondo de cabeceras de tabla del primer código */
+    color: #140101; /* Texto de las cabeceras */
+}
+
+.doc-table th,
+.doc-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.doc-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.doc-table a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.doc-table a:hover {
+    text-decoration: underline;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: rgba(252, 164, 247, 0.8); /* Color del primer código */
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+/* Animación para la barra lateral */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.sidebar .logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    opacity: 0;
+    animation: fadeInLogo 1.5s forwards ease-in-out;
+}
+
+/* Animación para el logo */
+@keyframes fadeInLogo {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    opacity: 0;
+    animation: slideInItem 1s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+/* Animación para los elementos de la lista en la barra lateral */
+@keyframes slideInItem {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s, text-decoration 0.3s;
+}
+
+.sidebar ul li a:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}

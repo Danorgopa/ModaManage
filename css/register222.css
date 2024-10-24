@@ -1,0 +1,131 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('https://i.pinimg.com/1200x/46/58/4a/46584af0336e12dba61276757a798330.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    width: 400px;
+    background-color: rgba(252, 164, 247, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    opacity: 0;
+    animation: slideIn 1.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #ff69b4;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+    color: white;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    background-color: #b07cad;
+    color: white;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.input-field:hover {
+    transform: scale(1.05);
+}
+
+.input-field:focus {
+    border: 1px solid #ffb6c1;
+    box-shadow: 0 0 10px rgba(255, 182, 193, 0.6);
+}
+
+button {
+    background-color: #fcbdfc;
+    color: #140101;
+    border: none;
+    padding: 12px;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #836fff;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+p {
+    margin-top: 15px;
+    color: white;
+}
+
+a {
+    color: #ffb6c1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff69b4;
+}
+
+a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    display: block;
+    background: #ff69b4;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+}
+
+a:hover::after {
+    width: 100%;
+}

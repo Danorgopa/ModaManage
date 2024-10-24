@@ -1,0 +1,102 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://i.pinimg.com/1200x/46/58/4a/46584af0336e12dba61276757a798330.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    animation: fadeIn 2s ease-in;
+}
+
+
+/* Animación para el body */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.edit-device-container {
+    max-width: 500px; /* Limitar el ancho del contenedor */
+    margin: auto; /* Centrar el contenedor */
+    background-color: rgba(252, 164, 247, 0.8); /* Color de fondo del formulario */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    animation: fadeIn 1s ease-in; /* Animación para el contenedor */
+}
+
+h2 {
+    text-align: center; /* Centrar el título */
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+label {
+    display: block; /* Hacer que las etiquetas ocupen toda la línea */
+    margin-bottom: 8px;
+    font-weight: bold; /* Negrita para las etiquetas */
+    color: #333; /* Color de las etiquetas */
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espacio entre los campos */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+    font-size: 16px; /* Tamaño de fuente */
+    background-color: #fff; /* Fondo blanco */
+    transition: border-color 0.3s; /* Transición para el borde */
+}
+
+/* Estilos para los campos en foco */
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #fcbdfc; /* Color de borde en foco */
+}
+
+/* Estilo del botón de enviar */
+input[type="submit"] {
+    background-color: #fcbdfc; /* Color de fondo */
+    color: #140101; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a mano */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s, transform 0.3s; /* Transición para el botón */
+}
+
+/* Estilo al pasar el mouse sobre el botón de enviar */
+input[type="submit"]:hover {
+    background-color: #ff6fec; /* Color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala */
+}
+
+/* Estilo del botón de regresar */
+button {
+    background-color: #ee58da; /* Color de fondo del botón de regresar */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a mano */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición para el botón */
+    margin-top: 10px; /* Espacio superior */
+}
+
+/* Estilo al pasar el mouse sobre el botón de regresar */
+button:hover {
+    background-color: #f84cf0; /* Color al pasar el mouse */
+}
