@@ -49,12 +49,6 @@ if ($usuario_id) {
 // Procesar la edición del perfil
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $email = $_POST['email'];
-    $telefono = $_POST['telefono'];
-    $direccion = $_POST['direccion'];
-    $fecha_nacimiento = $_POST['fecha_nacimiento'];
-    
     // Obtener la contraseña actual y la nueva
     $password_actual = $_POST['password_actual'] ?? '';
     $nueva_contrasena = $_POST['nueva_contrasena'] ?? '';
@@ -76,17 +70,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $hashed_password = password_hash($nueva_contrasena, PASSWORD_DEFAULT);
             
             // Consulta para actualizar la información del usuario
-            $updateSql = "UPDATE usuarios SET nombre = ?, apellido = ?, email = ?, telefono = ?, direccion = ?, fecha_nacimiento = ?, password = ? WHERE id = ?";
+            $updateSql = "UPDATE usuarios SET nombre = ?, password = ? WHERE id = ?";
             $updateStmt = $conn->prepare($updateSql);
-            $updateStmt->bind_param("sssssssi", $nombre, $apellido, $email, $telefono, $direccion, $fecha_nacimiento, $hashed_password, $usuario_id);
+            $updateStmt->bind_param("ssi", $nombre, $hashed_password, $usuario_id);
+
         } else {
             $error = "La contraseña actual no es correcta.";
         }
     } else {
         // Consulta para actualizar la información sin cambiar la contraseña
-        $updateSql = "UPDATE usuarios SET nombre = ?, apellido = ?, email = ?, telefono = ?, direccion = ?, fecha_nacimiento = ? WHERE id = ?";
+        $updateSql = "UPDATE usuarios SET nombre = ? WHERE id = ?";
         $updateStmt = $conn->prepare($updateSql);
-        $updateStmt->bind_param("ssssssi", $nombre, $apellido, $email, $telefono, $direccion, $fecha_nacimiento, $usuario_id);
+        $updateStmt->bind_param("si", $nombre, $usuario_id);
     }
 
     // Ejecutar la actualización
@@ -111,7 +106,7 @@ if (isset($conn)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil - Aulapp</title>
     <link rel="stylesheet" href="css/editar_perfil1.css">
-    <link rel="stylesheet" href="css/general_sidebar.css">
+    
 </head>
 <body>
     <div class="container">
@@ -122,22 +117,6 @@ if (isset($conn)) {
         <form method="POST" action="">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" value="<?php echo htmlspecialchars($userData['nombre']); ?>" required>
-
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" value="<?php echo htmlspecialchars($userData['apellido']); ?>" required>
-
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($userData['email']); ?>" required>
-
-            <label for="telefono">Teléfono:</label>
-            <input type="text" id="telefono" name="telefono" value="<?php echo htmlspecialchars($userData['telefono']); ?>">
-
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion" value="<?php echo htmlspecialchars($userData['direccion']); ?>">
-
-            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="<?php echo htmlspecialchars($userData['fecha_nacimiento']); ?>" required>
-
             <label for="password_actual">Contraseña Actual:</label>
             <input type="password" id="password_actual" name="password_actual" placeholder="Ingresa tu contraseña actual (si deseas cambiarla)">
 
