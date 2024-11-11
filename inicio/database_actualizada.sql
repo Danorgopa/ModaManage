@@ -53,6 +53,37 @@ CREATE TABLE IF NOT EXISTS inventario (
     FOREIGN KEY (proveedor_id) REFERENCES proveedor(id)
 );
 
+-- 5. Tabla: usuarios
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    nombre VARCHAR(100),
+    apellido VARCHAR(100),
+    direccion VARCHAR(255),
+    telefono VARCHAR(15),
+    foto_perfil VARCHAR(255),
+    fecha_nacimiento DATE,
+    rol_id INT,
+    FOREIGN KEY (rol_id) REFERENCES roles(id)
+);
+
+-- 6. Tabla: login
+CREATE TABLE IF NOT EXISTS login (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+-- 7. Tabla: historial_login
+CREATE TABLE IF NOT EXISTS historial_login (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    fecha_ingreso DATETIME,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
 -- Inserción de datos en la tabla roles
 INSERT INTO roles (nombre, descripcion) VALUES
 ('admin', 'Administrador con acceso total.'),
@@ -112,6 +143,21 @@ fecha_ingreso = VALUES(fecha_ingreso), proveedor_id = VALUES(proveedor_id);
 SELECT * FROM empleados;
 SELECT * FROM proveedor;
 SELECT * FROM inventario;
+
+-- Insertar datos de ejemplo para usuarios
+INSERT INTO usuarios (email, nombre, apellido, direccion, telefono, foto_perfil, fecha_nacimiento, rol_id) VALUES
+('admin11@gmail.com', 'Admin', 'User', 'Calle 10', '3001234567', 'admin.png', '1980-01-01', (SELECT id FROM roles WHERE nombre = 'admin'))
+ON DUPLICATE KEY UPDATE nombre = VALUES(nombre), apellido = VALUES(apellido), direccion = VALUES(direccion), telefono = VALUES(telefono), foto_perfil = VALUES(foto_perfil), fecha_nacimiento = VALUES(fecha_nacimiento), rol_id = VALUES(rol_id);
+
+-- Insertar datos de ejemplo para login
+INSERT INTO login (usuario_id, username, password) VALUES
+((SELECT id FROM usuarios WHERE email = 'admin11@gmail.com'), 'adminuser', 'hashedpassword123')
+ON DUPLICATE KEY UPDATE username = VALUES(username), password = VALUES(password);
+
+-- Insertar datos de ejemplo para historial_login
+INSERT INTO historial_login (usuario_id, fecha_ingreso) VALUES
+((SELECT id FROM usuarios WHERE email = 'admin11@gmail.com'), NOW());
+
 
 # codigos para los roles en el registro
 # admi                     = 109
