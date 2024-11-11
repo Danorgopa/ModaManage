@@ -1,0 +1,78 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../img/fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    max-height: 100dvh;
+    overflow-y: auto;
+}
+
+
+/* Contenedor general */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Barra lateral (Sidebar) */
+.sidebar {
+    width: 250px;
+    background-color: rgb(17, 59, 107); 
+    color: white;
+    padding: 20px;
+    font-size: 30px;
+}
+
+
+.sidebar .logo{
+    margin-bottom: 140px;
+}
+
+.sidebar .logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    animation: fadeInLogo 1.5s forwards ease-in-out;
+    scale: 1.4;  
+}
+
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 30px 15px;
+    animation: slideInItem 1s ease forwards;
+
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s, text-decoration 0.3s;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar ul li a:hover {
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+/* Contenido principal */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}

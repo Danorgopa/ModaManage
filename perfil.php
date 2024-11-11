@@ -5,7 +5,7 @@ session_start();
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['username'])) {
     // Si no hay sesión iniciada, redirigir al inicio de sesión
-    header("Location: login.html");
+    header("Location: index.html");
     exit;
 }
 
@@ -60,14 +60,15 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil - Aulapp</title>
-    <link rel="stylesheet" href="../css/perfil1.css">
+    <link rel="stylesheet" href="css/perfil1.css">
+    <link rel="stylesheet" href="css/general_sidebar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Iconos -->
 </head>
 <body>
     <div class="dashboard-container">
         <nav class="sidebar">
             <div class="logo">
-                <img src="../img/rosaa-removebg-preview.png" alt="Logo de Inventario">
+                <img src="img/rosaa-removebg-preview.png" alt="Logo de Inventario">
             </div>
             <ul>
                 <li><a href="perfil.php"><i class="fas fa-user"></i> Perfil</a></li>
@@ -91,14 +92,9 @@ $conn->close();
 
             <div class="content">
                 <?php if ($userData): ?>
-                    <h2>Bienvenido, <?php echo htmlspecialchars($userData['nombre'] . ' ' . $userData['apellido']); ?></h2>
+                    <h2>Bienvenido, <?php echo htmlspecialchars($userData['nombre']); ?></h2>
                     <p><strong>Correo Electrónico:</strong> <?php echo htmlspecialchars($userData['email']); ?></p>
-                    <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($userData['telefono']); ?></p>
-                    <p><strong>Dirección:</strong> <?php echo htmlspecialchars($userData['direccion']); ?></p>
-                    <p><strong>Fecha de Nacimiento:</strong> <?php echo htmlspecialchars($userData['fecha_nacimiento']); ?></p>
                     <p><strong>Rol:</strong> <?php echo htmlspecialchars($userData['rol_nombre']); ?></p>
-                    <img src="<?php echo htmlspecialchars($userData['foto_perfil']); ?>" alt="Foto de Perfil" style="width:100px; height:auto;">
-                <?php else: ?>
                     <p>No se encontraron datos del usuario.</p>
                 <?php endif; ?>
             </div>

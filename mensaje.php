@@ -8,7 +8,8 @@ session_start(); // Iniciar sesión para acceder al mensaje
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensaje</title>
-    <link rel="stylesheet" href="../css/mensaje.css">
+    <link rel="stylesheet" href="css/mensaje.css">
+    
 </head>
 <body>
     <div class="container">

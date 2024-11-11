@@ -49,10 +49,10 @@ if ($result->num_rows > 0) {
         header("Location: home.php");
         exit;
     } else {
-        header("Location: login.html");
+        header("Location: index.html");
     }
 } else {
-    header("Location: login.html");
+    header("Location: index.html");
 }
 
 $stmt->close();

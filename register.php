@@ -18,10 +18,6 @@ if ($conn->connect_error) {
 // Obtener datos del formulario
 $email = $_POST['email'];
 $nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
-$telefono = $_POST['telefono'];
-$direccion = $_POST['direccion'];  // Asegúrate de que existe en la base de datos
-$fecha_nacimiento = $_POST['fecha_nacimiento'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $confirm_password = $_POST['confirm_password'];
@@ -72,12 +68,12 @@ try {
     $conn->begin_transaction();
 
     // Insertar datos en la tabla `usuarios`
-    $sql_usuarios = "INSERT INTO usuarios (email, nombre, apellido, telefono, direccion, fecha_nacimiento, rol_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql_usuarios = "INSERT INTO usuarios (email, nombre, rol_id) VALUES (?, ?, ?)";
     $stmt_usuarios = $conn->prepare($sql_usuarios);
     if (!$stmt_usuarios) {
         throw new Exception("Error en la preparación de la consulta para usuarios: " . $conn->error);
     }
-    $stmt_usuarios->bind_param("ssssssi", $email, $nombre, $apellido, $telefono, $direccion, $fecha_nacimiento, $rol);
+    $stmt_usuarios->bind_param("ssi", $email, $nombre, $rol);
     
     if ($stmt_usuarios->execute()) {
         $usuario_id = $stmt_usuarios->insert_id;
@@ -91,15 +87,8 @@ try {
         $stmt_login->bind_param("iss", $usuario_id, $username, $hashed_password);
         
         if ($stmt_login->execute()) {
-            if ($rol === 3) { // Si el rol es 'mantenimiento'
-                $sql_tecnicos = "INSERT INTO tecnicos (nombre, apellido, telefono, correo, rol_id) VALUES (?, ?, ?, ?, ?)";
-                $stmt_tecnicos = $conn->prepare($sql_tecnicos);
-                $stmt_tecnicos->bind_param("ssssi", $nombre, $apellido, $telefono, $email, $rol);
-                $stmt_tecnicos->execute();
-                $stmt_tecnicos->close();
-            }
             $conn->commit();
-            header("Location: login.html");
+            header("Location: index.html");
             exit();
         } else {
             throw new Exception("Error al insertar en la tabla login: " . $conn->error);

@@ -6,6 +6,6 @@ session_start();
 session_destroy();
 
 // Redirigir al inicio de sesión
-header("Location: login.html");
+header("Location: index.html");
 exit;
 ?>

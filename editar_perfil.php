@@ -4,7 +4,7 @@ session_start();
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['username'])) {
-    header("Location: login.html");
+    header("Location: index.html");
     exit;
 }
 
@@ -110,7 +110,8 @@ if (isset($conn)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil - Aulapp</title>
-    <link rel="stylesheet" href="../css/editar_perfil1.css">
+    <link rel="stylesheet" href="css/editar_perfil1.css">
+    <link rel="stylesheet" href="css/general_sidebar.css">
 </head>
 <body>
     <div class="container">

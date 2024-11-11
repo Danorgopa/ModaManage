@@ -5,7 +5,7 @@ session_start();
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['username'])) {
     // Si no hay sesión iniciada, redirigir al inicio de sesión
-    header("Location: login.html");
+    header("Location: index.html");
     exit;
 }
 ?>
@@ -16,7 +16,8 @@ if (!isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aulapp - Gestión de Inventarios y Mantenimiento</title>
-    <link rel="stylesheet" href="../css/dashboard1.css">
+    <link rel="stylesheet" href="css/dashboard1.css">
+    <link rel="stylesheet" href="css/general_sidebar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Iconos -->
 </head>
 <body>
@@ -24,10 +25,11 @@ if (!isset($_SESSION['username'])) {
         <!-- Barra lateral -->
         <nav class="sidebar">
             <div class="logo">
-                <img src="../img/rosaa-removebg-preview.png" alt="inventory Logo">
+                <img src="img/rosaa-removebg-preview.png" alt="inventory Logo">
             </div>
             <ul>
                 <li><a href="perfil.php"><i class="fas fa-user"></i> Perfil</a></li> <!-- Enlace al módulo de perfil -->
+                <li><a href="home.php"><i class="fas fa-home"></i> Dashboard</a></li>
                 <li><a href="inventario.php"><i class="fas fa-boxes"></i> Inventario</a></li>
                 <li><a href="mantenimiento.php"><i class="fas fa-tools"></i> Mantenimiento</a></li>
                 <li><a href="generar_reporte.php"><i class="fas fa-chart-line"></i> Reportes</a></li>
