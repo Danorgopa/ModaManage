@@ -40,7 +40,6 @@ if (!isset($_SESSION['username'])) {
       </ul>
     </nav>
 
-<<<<<<< HEAD
         <!-- Contenido principal -->
         <div class="main-content">
             <!-- Barra superior -->
@@ -59,17 +58,6 @@ if (!isset($_SESSION['username'])) {
                     <p>Dispositivos que requieren atención inmediata.</p>
                 </div>
             </div>
-=======
-    <!-- Contenido principal -->
-    <div class="main-content">
-      <!-- Barra superior -->
-      <header class="topbar">
-        <h1>Panel de Gestión</h1>
-        <div class="actions">
-          <a href="nuevo_dispositivo.php" class="btn">Nuevo Dispositivo</a>
-          <a href="generar_reporte.php" class="btn">Generar Reporte</a>
-          <a href="logout.php" class="btn">Salir</a>
->>>>>>> 9c0046192d5c7e126b3c835a07af5098a9d744c6
         </div>
       </header>
 
