@@ -49,10 +49,18 @@ if ($result->num_rows > 0) {
     header("Location: home.php");
     exit;
   } else {
-    header("Location: index.html");
+    // Contraseña incorrecta, mostrar alerta
+    echo "<script>
+            alert('La contraseña es incorrecta.');
+            window.location.href = 'index.html';
+          </script>";
   }
 } else {
-  header("Location: index.html");
+  // Usuario no existe, mostrar alerta
+  echo "<script>
+          alert('El usuario no existe.');
+          window.location.href = 'index.html';
+        </script>";
 }
 
 $stmt->close();
