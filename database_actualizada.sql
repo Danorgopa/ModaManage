@@ -107,8 +107,6 @@ nombre_producto = VALUES(nombre_producto), descripcion = VALUES(descripcion),
 cantidad = VALUES(cantidad), precio_unitario = VALUES(precio_unitario), 
 fecha_ingreso = VALUES(fecha_ingreso), proveedor_id = VALUES(proveedor_id);
 
-
-
 # codigos para los roles en el registro
 # admi                     = 109
 # inventarista             = 619

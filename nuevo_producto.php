@@ -176,7 +176,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <div class="overlay"></div>
   <div class="container">
     <h2>Añadir Nuevo Dispositivo</h2>
-    <form action="nuevo_dispositivo.php" method="post">
+    <form action="nuevo_producto.php" method="post">
       <label for="nombre">Nombre:</label>
       <input type="text" name="nombre" required><br>
 

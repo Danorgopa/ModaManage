@@ -8,6 +8,22 @@ body {
 }
 
 
+.actions {
+    display: flex;
+}
+
+.actions .btn {
+    background-color: rgb(109, 158, 214); 
+    color: #140101;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin-left: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
 
 .dashboard-container {
     display: flex;
@@ -25,7 +41,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(252, 164, 247, 0.8); /* Color del primer código */
+    background-color: rgb(129, 45, 155); /* Color del primer código */
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     animation: slideDownTopbar 1s ease-in-out;
@@ -62,9 +78,6 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
-.doc-table tr:hover {
-    background-color: #f1f1f1;
-}
 
 .doc-table a {
     color: #007BFF;

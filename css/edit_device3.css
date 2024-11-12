@@ -12,7 +12,7 @@ body {
 
 .edit-device-container {
     max-width: 500px; /* Limitar el ancho del contenedor */
-    margin: auto; /* Centrar el contenedor */
+    margin: 200px auto; /* Centrar el contenedor */
     background-color: rgba(252, 164, 247, 0.8); /* Color de fondo del formulario */
     padding: 20px;
     border-radius: 8px; /* Bordes redondeados */
