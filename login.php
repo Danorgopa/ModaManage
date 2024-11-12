@@ -20,7 +20,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // Consultar la base de datos para verificar si el usuario existe en la tabla `login`
-$sql = "SELECT login.password, usuarios.id, usuarios.nombre, usuarios.rol_id 
+$sql = "SELECT login.password, usuarios.id, usuarios.nombre 
         FROM login 
         JOIN usuarios ON login.usuario_id = usuarios.id 
         WHERE login.username = ?";
@@ -42,18 +42,25 @@ if ($result->num_rows > 0) {
 
   if (password_verify($password, $user['password'])) {
     // Contraseña correcta, iniciar sesión
-    $_SESSION['username'] = $username;       // Almacenar el nombre de usuario
-    $_SESSION['user_id'] = $user['id'];      // Almacenar el ID del usuario
-    $_SESSION['nombre'] = $user['nombre'];   // Almacenar el nombre completo del usuario
-    $_SESSION['rol_id'] = $user['rol_id'];   // Almacenar el rol del usuario (nuevo)    
+    $_SESSION['username'] = $username;  // Almacenar el nombre de usuario en la sesión
+    $_SESSION['user_id'] = $user['id']; // Almacenar el ID de usuario en la sesión (opcional)
+    $_SESSION['nombre'] = $user['nombre']; // Almacenar el nombre del usuario (opcional)
 
     header("Location: home.php");
     exit;
   } else {
-    header("Location: index.html");
+    // Contraseña incorrecta, mostrar alerta
+    echo "<script>
+            alert('La contraseña es incorrecta.');
+            window.location.href = 'index.html';
+          </script>";
   }
 } else {
-  header("Location: index.html");
+  // Usuario no existe, mostrar alerta
+  echo "<script>
+          alert('El usuario no existe.');
+          window.location.href = 'index.html';
+        </script>";
 }
 
 $stmt->close();
