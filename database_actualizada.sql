@@ -49,7 +49,6 @@ CREATE TABLE IF NOT EXISTS inventario (
     cantidad INT NOT NULL,
     precio_unitario DECIMAL(10,2),
     fecha_ingreso DATE,
-    proveedor_id INT,
     FOREIGN KEY (proveedor_id) REFERENCES proveedor(id)
 );
 

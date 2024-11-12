@@ -81,8 +81,6 @@ $totalPrecio = 0; // Variable para almacenar el precio total
         <h1>Gestión de Inventario</h1>
         <div class="actions">
           <a href="nuevo_producto.php" class="btn">Agregar</a>
-        </div>
-        <div class="actions">
           <a href="logout.php" class="btn">Salir</a>
         </div>
       </header>

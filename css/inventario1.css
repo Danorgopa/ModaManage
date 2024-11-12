@@ -41,7 +41,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(129, 45, 155); /* Color del primer código */
+    background-color: rgb(17, 59, 107); 
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     animation: slideDownTopbar 1s ease-in-out;
