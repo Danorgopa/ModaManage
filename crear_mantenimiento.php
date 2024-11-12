@@ -1,8 +1,8 @@
 <?php
 // Configuración de la conexión a la base de datos
-$host = "localhost"; // Cambia según tu configuración
+$host = "sql306.infinityfree.com"; // Cambia según tu configuración
 $user = "if0_37701389"; // Cambia según tu configuración
-$password = ""; // Cambia según tu configuración
+$password = "mvOCfmjvomz"; // Cambia según tu configuración
 $database = "if0_37701389_empresa_inventario";
 
 // Crear conexión

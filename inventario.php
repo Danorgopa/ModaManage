@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])) {
   exit;
 }
 
-$conn = new mysqli("localhost", "if0_37701389", "", "if0_37701389_empresa_inventario"); // Conexión con la base de datos
+$conn = new mysqli("sql306.infinityfree.com", "if0_37701389", "mvOCfmjvomz", "if0_37701389_empresa_inventario"); // Conexión con la base de datos
 
 // Verificar conexión
 if ($conn->connect_error) {

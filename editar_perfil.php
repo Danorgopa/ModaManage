@@ -9,9 +9,9 @@ if (!isset($_SESSION['username'])) {
 }
 
 // Conectar a la base de datos
-$servername = "localhost";
+$servername = "sql306.infinityfree.com";
 $username = "if0_37701389";
-$password = ""; // tu contraseña
+$password = "mvOCfmjvomz"; // tu contraseña
 $dbname = "if0_37701389_empresa_inventario";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

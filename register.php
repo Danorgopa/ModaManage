@@ -3,7 +3,7 @@
 session_start();
 
 // Conectar a la base de datos
-$servername = "127.0.0.1";
+$servername = "sql306.infinityfree.com";
 $username_db = "if0_37701389";
 $password_db = "mvOCfmjvomz";
 $dbname = "if0_37701389_empresa_inventario";
