@@ -3,10 +3,10 @@
 session_start();
 
 // Conectar a la base de datos
-$servername = "sql306.infinityfree.com";
+$servername = "127.0.0.1";
 $username_db = "if0_37701389";
 $password_db = "mvOCfmjvomz";
-$dbname = "if0_37701389_proyecto";
+$dbname = "if0_37701389_empresa_inventario";
 
 $conn = new mysqli($servername, $username_db, $password_db, $dbname);
 
