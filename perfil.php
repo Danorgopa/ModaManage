@@ -11,9 +11,9 @@ if (!isset($_SESSION['username'])) {
 
 // Conectar a la base de datos
 $servername = "localhost";
-$username = "if0_37701389";
+$username = "root";
 $password = ""; // tu contraseña
-$dbname = "if0_37701389_empresa_inventario";
+$dbname = "empresa_inventario";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

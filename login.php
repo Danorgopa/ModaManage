@@ -4,9 +4,9 @@ session_start();
 
 // Conectar a la base de datos
 $servername = "127.0.0.1";  // localhost
-$username_db = "if0_37701389";       // usuario de la base de datos
+$username_db = "root";       // usuario de la base de datos
 $password_db = "";           // contraseña de la base de datos
-$dbname = "if0_37701389_empresa_inventario";  // nombre de la base de datos
+$dbname = "empresa_inventario";  // nombre de la base de datos
 
 $conn = new mysqli($servername, $username_db, $password_db, $dbname);
 

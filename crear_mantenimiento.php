@@ -1,9 +1,9 @@
 <?php
 // Configuración de la conexión a la base de datos
 $host = "localhost"; // Cambia según tu configuración
-$user = "if0_37701389"; // Cambia según tu configuración
+$user = "root"; // Cambia según tu configuración
 $password = ""; // Cambia según tu configuración
-$database = "if0_37701389_empresa_inventario";
+$database = "empresa_inventario";
 
 // Crear conexión
 $conn = new mysqli($host, $user, $password, $database);

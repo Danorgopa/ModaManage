@@ -2,7 +2,7 @@
 session_start(); // Iniciar sesión para almacenar mensajes
 
 // Conectar a la base de datos
-$conn = new mysqli('localhost', 'if0_37701389', '', 'if0_37701389_empresa_inventario');
+$conn = new mysqli('localhost', 'root', '', 'empresa_inventario');
 
 // Comprobar la conexión
 if ($conn->connect_error) {

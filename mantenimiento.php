@@ -6,7 +6,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 // Conexión a la base de datos
-$conn = new mysqli("127.0.0.1", "if0_37701389", "", "if0_37701389_empresa_inventario");
+$conn = new mysqli("127.0.0.1", "root", "", "empresa_inventario");
 
 if ($conn->connect_error) {
   die("Conexión fallida: " . $conn->connect_error);
