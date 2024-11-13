@@ -58,16 +58,20 @@ body {
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Agrega el desplazamiento horizontal */
+}
+
+.doc-table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Aparecerá el scrollbar horizontal si es necesario */
+    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento táctil en dispositivos móviles */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
 }
 
 .doc-table {
     width: 100%;
     border-collapse: collapse;
-}
-
-.doc-table thead {
-    background-color: #fcbdfc; /* Fondo de cabeceras de tabla del primer código */
-    color: #140101; /* Texto de las cabeceras */
+    table-layout: auto; /* Permite que las celdas se ajusten dinámicamente al contenido */
 }
 
 .doc-table th,
@@ -75,13 +79,14 @@ body {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    word-wrap: break-word; /* Permite que el texto largo se divida y no desborde */
 }
 
-
-.doc-table a {
-    color: #007BFF;
-    text-decoration: none;
+.doc-table thead {
+    background-color: #fcbdfc; /* Fondo de cabeceras de tabla */
+    color: #140101; /* Color de texto de las cabeceras */
 }
+
 
 .doc-table a:hover {
     text-decoration: underline;
