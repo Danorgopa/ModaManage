@@ -8,6 +8,22 @@ body {
 }
 
 
+.actions {
+    display: flex;
+}
+
+.actions .btn {
+    background-color: rgb(109, 158, 214); 
+    color: #140101;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin-left: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
 
 .dashboard-container {
     display: flex;
@@ -20,12 +36,11 @@ body {
 }
 
 
-
 .topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(252, 164, 247, 0.8); /* Color del primer código */
+    background-color: rgb(17, 59, 107); 
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     animation: slideDownTopbar 1s ease-in-out;
@@ -43,16 +58,20 @@ body {
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Agrega el desplazamiento horizontal */
+}
+
+.doc-table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Aparecerá el scrollbar horizontal si es necesario */
+    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento táctil en dispositivos móviles */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
 }
 
 .doc-table {
     width: 100%;
     border-collapse: collapse;
-}
-
-.doc-table thead {
-    background-color: #fcbdfc; /* Fondo de cabeceras de tabla del primer código */
-    color: #140101; /* Texto de las cabeceras */
+    table-layout: auto; /* Permite que las celdas se ajusten dinámicamente al contenido */
 }
 
 .doc-table th,
@@ -60,16 +79,14 @@ body {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    word-wrap: break-word; /* Permite que el texto largo se divida y no desborde */
 }
 
-.doc-table tr:hover {
-    background-color: #f1f1f1;
+.doc-table thead {
+    background-color: #fcbdfc; /* Fondo de cabeceras de tabla */
+    color: #140101; /* Color de texto de las cabeceras */
 }
 
-.doc-table a {
-    color: #007BFF;
-    text-decoration: none;
-}
 
 .doc-table a:hover {
     text-decoration: underline;
@@ -115,7 +132,96 @@ body {
     transition: transform 0.3s, text-decoration 0.3s;
 }
 
+/* Estilo para el texto asociado a los radio buttons */
+input[type="radio"] + label {
+    color: white; /* Cambiar color del texto a blanco */
+}
+
+/* Si también quieres cambiar el color de los labels cuando están seleccionados */
+input[type="radio"]:checked + label {
+    color: #00ff00; /* Color del texto cuando el radio button está seleccionado (ej. verde) */
+}
+
 .sidebar ul li a:hover {
     transform: scale(1.1);
     text-decoration: underline;
+}
+
+/* Estilos generales para el enlace de "Editar" */
+a.edit-btn {
+    text-decoration: none; /* Eliminar subrayado */
+    color: white; /* Color del texto blanco */
+    background-color: #4CAF50; /* Color de fondo verde */
+    padding: 8px 16px; /* Espaciado interno para el botón */
+    border: #4CAF50 1px solid;
+    border-radius: 4px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+    display: inline-flex; /* Flexbox para alinear el emoji y el texto */
+    align-items: center; /* Alinear el emoji verticalmente */
+    gap: 8px; /* Espacio entre el emoji y el texto */
+    transition: background-color 0.3s, transform 0.2s; /* Transición suave */
+}
+
+/* Estilo cuando el enlace es hover */
+a.edit-btn:hover {
+    background-color: #45a049; /* Color de fondo verde más oscuro al hacer hover */
+    transform: scale(1.05); /* Efecto de aumento */
+}
+
+/* Estilo cuando el enlace ya ha sido visitado */
+a.edit-btn:visited {
+    color: white; /* Mantener el texto blanco después de ser visitado */
+    background-color: #3e8e41; /* Mantener un tono verde oscuro cuando se haya visitado */
+}
+
+/* Estilo para el emoji */
+a.edit-btn::before {
+    content: "🖉"; /* Emoji de lápiz */
+    font-size: 18px; /* Tamaño del emoji */
+}
+
+/* Estilo para cuando el enlace está deshabilitado */
+a.edit-btn:disabled {
+    background-color: #ccc; /* Color gris cuando esté deshabilitado */
+    color: #fff; /* Color gris del texto */
+    cursor: not-allowed; /* Cambiar el cursor cuando esté deshabilitado */
+}
+
+/* Estilos generales para el enlace de "Eliminar" */
+a[href*="delete_id"], .del-btn {
+    text-decoration: none;         /* Eliminar subrayado */
+    color: red;                    /* Color del texto rojo */
+    font-weight: bold;             /* Texto en negrita */
+    padding: 8px 16px;             /* Espaciado interno */
+    border: 1px solid red;         /* Borde rojo */
+    border-radius: 5px;            /* Bordes redondeados */
+    transition: all 0.3s ease;     /* Transición suave para los cambios */
+    display: inline-flex;          /* Usar flexbox para alinear el texto y el símbolo */
+    align-items: center;           /* Alineación vertical del contenido */
+    gap: 5px;                      /* Espacio entre el texto y el símbolo */
+}
+
+/* Estilo cuando el enlace es hover */
+a[href*="delete_id"], .del-btn:hover {
+    background-color: red;         /* Fondo rojo al hacer hover */
+    color: white;                  /* Color de texto blanco en hover */
+    transform: scale(1.05);        /* Efecto de ampliación en hover */
+}
+
+/* Estilo cuando el enlace ya ha sido visitado */
+a[href*="delete_id"], .del-btn:visited {
+    color: red;                    /* Mantener el texto rojo después de ser visitado */
+    background-color: #f5c6cb;     /* Fondo suave después de la visita */
+}
+
+/* Estilo para el emoji de "Eliminar" */
+a[href*="delete_id"], .del-btn::after {
+    content: " ❌";                 /* Emoji de "X" al final */
+    font-size: 18px;                /* Tamaño del emoji */
+    margin-left: 5px;               /* Espacio entre el texto y el emoji */
+}
+
+.lado{
+    display: flex;
+    flex-direction: row;
 }

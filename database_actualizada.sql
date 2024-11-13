@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS if0_37701389_empresa_inventario;
-USE if0_37701389_empresa_inventario;
+CREATE DATABASE IF NOT EXISTS empresa_inventario;
+USE empresa_inventario;
 
 -- 1. Tabla: roles
 CREATE TABLE IF NOT EXISTS roles (
@@ -49,7 +49,6 @@ CREATE TABLE IF NOT EXISTS inventario (
     cantidad INT NOT NULL,
     precio_unitario DECIMAL(10,2),
     fecha_ingreso DATE,
-    proveedor_id INT,
     FOREIGN KEY (proveedor_id) REFERENCES proveedor(id)
 );
 
@@ -107,6 +106,9 @@ nombre_producto = VALUES(nombre_producto), descripcion = VALUES(descripcion),
 cantidad = VALUES(cantidad), precio_unitario = VALUES(precio_unitario), 
 fecha_ingreso = VALUES(fecha_ingreso), proveedor_id = VALUES(proveedor_id);
 
+
+ALTER TABLE empleados ADD COLUMN estado INT DEFAULT 1;
+ALTER TABLE proveedor ADD COLUMN estado INT DEFAULT 1
 
 
 # codigos para los roles en el registro
