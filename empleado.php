@@ -49,7 +49,7 @@ if (isset($_GET['cedula'])) {
 $sql = "SELECT cedula, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, 
         direccion, fecha_nacimiento, licencia_conduccion, fecha_ingreso, experiencia, 
         edad, estado_civil, rh, eps, arl, estrato, profesion, rol_id 
-        FROM empleados WHERE rol_id = 1";
+        FROM empleados WHERE estado = 1";
 
 $result = $conn->query($sql);
 
