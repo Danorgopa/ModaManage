@@ -5,7 +5,7 @@ body {
     padding: 0;
     background: url('../img/fondo.png') no-repeat center center fixed;
     background-size: cover;
-    color: #333;
+    color: #fff;
     max-height: 100dvh;
     overflow-y: auto;
 }

@@ -246,7 +246,7 @@ $conn->close();
 
 
       <input type="submit" value="Añadir Empleado">
-      <button type="button" class="btn" onclick="window.location.href='home.php';">Regresar al Home</button>
+      <button type="button" class="btn" onclick="window.location.href='empleado.php';">Regresar</button>
     </form>
   </div>
 </body>

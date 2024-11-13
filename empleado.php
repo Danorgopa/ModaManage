@@ -49,7 +49,7 @@ if (isset($_GET['cedula'])) {
 $sql = "SELECT cedula, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, 
         direccion, fecha_nacimiento, licencia_conduccion, fecha_ingreso, experiencia, 
         edad, estado_civil, rh, eps, arl, estrato, profesion, rol_id 
-        FROM empleados WHERE estado = 1";
+        FROM empleados WHERE rol_id = 1";
 
 $result = $conn->query($sql);
 
@@ -69,7 +69,7 @@ if (!$result) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ERP - Empleados</title>
-  <link rel="stylesheet" href="css/mantenimiento2.css">
+  <link rel="stylesheet" href="css/inventario1.css">
   <link rel="stylesheet" href="css/general_sidebar.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Iconos -->
 </head>
@@ -80,12 +80,12 @@ if (!$result) {
     <div class="main-content">
       <header class="topbar">
         <h1>Gestión de Empleados</h1>
+        <div class="actions">
+          <a href="crear_empleado.php" class="btn btn-primary">Ingresar Empleado</a>
+          <a href="logout.php" class="btn">Salir</a>
+        </div>
       </header>
       <div class="content">
-        <!-- Botón para crear un nuevo empleado -->
-        <div class="button-container">
-          <a href="crear_empleado.php" class="btn btn-primary">Ingresar Empleado</a>
-        </div>
 
         <table class="doc-table">
           <thead>
