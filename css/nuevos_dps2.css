@@ -10,9 +10,9 @@ body {
 
 .container {
     max-width: 600px;
-    margin: 50px auto;
+    margin: 200px auto;
     padding: 20px;
-    background-color: rgba(252, 164, 247, 0.8); /* Color de fondo similar al primer código */
+    background-color: rgb(17, 59, 107); 
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative; /* Para que el overlay no cubra este contenedor */
@@ -22,13 +22,13 @@ body {
 
 h2 {
     text-align: center;
-    color: #333;
+    color: #fff;
     animation: fadeIn 2s ease-in; /* Animación para el título */
 }
 
 label {
     font-weight: bold;
-    color: #555;
+    color: #fff;
 }
 
 input[type="text"],
@@ -60,7 +60,7 @@ textarea {
 }
 
 input[type="submit"] {
-    background-color: #fcbdfc; /* Color de fondo del botón de envío */
+    background-color: rgb(109, 158, 214); 
     color: #140101; /* Color del texto del botón de envío */
     border: none;
     padding: 15px 20px;

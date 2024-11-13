@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $cantidad = $_POST['cantidad'];
   $precio = $_POST['precio'];
 
+
   // Validar que los campos obligatorios no estén vacíos
   if (empty($nombre) || empty($descripcion) || empty($cantidad) || empty($precio)) {
     $_SESSION['message'] = "Por favor, completa todos los campos obligatorios.";
@@ -24,12 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit();
   }
 
-  // Calcular el precio total
-  $precio_total = $precio * $cantidad;
-
   // Preparar la consulta de inserción en la tabla inventario
-  $sql = $conn->prepare("INSERT INTO inventario (nombre_producto, descripcion, cantidad, precio_unitario, precio_total) 
-                         VALUES (?, ?, ?, ?, ?)");
+  $sql = $conn->prepare("INSERT INTO inventario (nombre_producto, descripcion, cantidad, precio_unitario) 
+                         VALUES (?, ?, ?, ?)");
 
   // Verificar si la preparación fue exitosa
   if (!$sql) {
@@ -37,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 
   // Asignar parámetros
-  $sql->bind_param('ssidd', $nombre, $descripcion, $cantidad, $precio, $precio_total);
+  $sql->bind_param('ssid', $nombre, $descripcion, $cantidad, $precio);
 
   // Ejecutar la consulta
   if ($sql->execute()) {
@@ -84,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <input type="number" name="precio" step="0.01" required><br>
 
       <input type="submit" value="Guardar Dispositivo">
-      <button type="button" onclick="window.location.href='home.php';">Volver al Home</button>
+      <button type="button" class="btn" onclick="window.location.href='inventario.php';">Volver</button>
     </form>
   </div>
 </body>
