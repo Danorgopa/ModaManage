@@ -86,7 +86,6 @@ if (!$result) {
         </div>
       </header>
       <div class="content">
-
         <table class="doc-table">
           <thead>
             <tr>
