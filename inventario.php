@@ -81,8 +81,6 @@ $totalPrecio = 0; // Variable para almacenar el precio total
         <h1>Gestión de Inventario</h1>
         <div class="actions">
           <a href="nuevo_producto.php" class="btn">Agregar</a>
-        </div>
-        <div class="actions">
           <a href="logout.php" class="btn">Salir</a>
         </div>
       </header>
@@ -108,8 +106,8 @@ $totalPrecio = 0; // Variable para almacenar el precio total
                   <td><?php echo htmlspecialchars($row['nombre_producto']); ?></td>
                   <td><?php echo htmlspecialchars($row['descripcion']); ?></td>
                   <td><?php echo htmlspecialchars($row['cantidad']); ?></td>
-                  <td><?php echo htmlspecialchars($row['precio_unitario']); ?></td>
-                  <td><?php echo number_format($precioTotal, 2); ?> USD</td>
+                  <td><?php echo htmlspecialchars($row['precio_unitario']); ?> COP</td>
+                  <td><?php echo number_format($precioTotal, 2); ?> COP</td>
                   <td>
                     <a href="edit_product.php?id=<?php echo $row['id']; ?>" class="edit-btn">Editar</a> |
                     <a href="inventario.php?delete_id=<?php echo $row['id']; ?>" onclick="return confirm('¿Está seguro de que desea eliminar este producto?');">Eliminar</a>
@@ -123,7 +121,7 @@ $totalPrecio = 0; // Variable para almacenar el precio total
             <?php endif; ?>
           </tbody>
         </table>
-        <h2>Precio Total General: <?php echo number_format($totalPrecio, 2); ?> USD</h2>
+        <h2>Precio Total General: <?php echo number_format($totalPrecio, 2); ?> COP</h2>
       </div>
     </div>
   </div>
