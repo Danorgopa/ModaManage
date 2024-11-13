@@ -127,6 +127,16 @@ body {
     transition: transform 0.3s, text-decoration 0.3s;
 }
 
+/* Estilo para el texto asociado a los radio buttons */
+input[type="radio"] + label {
+    color: white; /* Cambiar color del texto a blanco */
+}
+
+/* Si también quieres cambiar el color de los labels cuando están seleccionados */
+input[type="radio"]:checked + label {
+    color: #00ff00; /* Color del texto cuando el radio button está seleccionado (ej. verde) */
+}
+
 .sidebar ul li a:hover {
     transform: scale(1.1);
     text-decoration: underline;
@@ -168,7 +178,7 @@ a.edit-btn::before {
 /* Estilo para cuando el enlace está deshabilitado */
 a.edit-btn:disabled {
     background-color: #ccc; /* Color gris cuando esté deshabilitado */
-    color: #666; /* Color gris del texto */
+    color: #fff; /* Color gris del texto */
     cursor: not-allowed; /* Cambiar el cursor cuando esté deshabilitado */
 }
 

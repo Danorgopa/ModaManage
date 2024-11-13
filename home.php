@@ -33,6 +33,7 @@ if (!isset($_SESSION['username'])) {
     }
     ?>
 
+
     <!-- Contenido principal -->
     <div class="main-content">
       <!-- Barra superior -->
