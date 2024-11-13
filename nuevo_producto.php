@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $sql->close();
 
   // Redirigir a la página de mensaje
-  header('Location: mensaje.php');
+  header('Location: inventario.php');
   exit();
 }
 ?>
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <label for="precio">Precio por unidad:</label>
       <input type="number" name="precio" step="0.01" required><br>
 
-      <input type="submit" value="Guardar Dispositivo">
+      <input type="submit" value="Guardar Producto">
       <button type="button" class="btn" onclick="window.location.href='inventario.php';">Volver</button>
     </form>
   </div>
