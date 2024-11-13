@@ -135,7 +135,7 @@ if (!$result) {
                       <td>" . htmlspecialchars($row['profesion']) . "</td>
                       <td>" . htmlspecialchars($row['rol_id']) . "</td>
                       <td>
-                        <a href='cartas_editar.php?id=" . htmlspecialchars($row['cedula']) . "' title='Editar' class='btn btn-primary'>
+                        <a href='empleado_editar.php?cedula=" . htmlspecialchars($row['cedula']) . "' title='Editar' class='btn btn-primary'>
                           <i class='fa fa-edit'></i>
                         </a>
                         <a href='empleado.php?cedula=" . htmlspecialchars($row['cedula']) . "' class='btn btn-danger' onclick='return confirm(\"¿Estás seguro de que quieres eliminar este empleado?\");'>
