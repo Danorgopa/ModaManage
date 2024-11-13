@@ -47,24 +47,13 @@ if (!isset($_SESSION['username'])) {
       <div class="content">
       </div>
 
-                <div class="alert">
-                    <h2>Alertas de Inventario y Mantenimiento</h2>
-                    <p>Dispositivos que requieren atención inmediata.</p>
-                </div>
-            </div>
-=======
-    <!-- Contenido principal -->
-    <div class="main-content">
-      <!-- Barra superior -->
-      <header class="topbar">
-        <h1>Panel de Gestión</h1>
-        <div class="actions">
-          <a href="nuevo_dispositivo.php" class="btn">Nuevo Dispositivo</a>
-          <a href="generar_reporte.php" class="btn">Generar Reporte</a>
-          <a href="logout.php" class="btn">Salir</a>
->>>>>>> 9c0046192d5c7e126b3c835a07af5098a9d744c6
-        </div>
-      </header>
+      <div class="alert">
+        <h2>Alertas de Inventario </h2>
+
+      </div>
+    </div>
+  </div>
+  </header>
 
   <div class="content">
   </div>
