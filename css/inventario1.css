@@ -36,7 +36,6 @@ body {
 }
 
 
-
 .topbar {
     display: flex;
     justify-content: space-between;
@@ -131,4 +130,78 @@ body {
 .sidebar ul li a:hover {
     transform: scale(1.1);
     text-decoration: underline;
+}
+
+/* Estilos generales para el enlace de "Editar" */
+a.edit-btn {
+    text-decoration: none; /* Eliminar subrayado */
+    color: white; /* Color del texto blanco */
+    background-color: #4CAF50; /* Color de fondo verde */
+    padding: 8px 16px; /* Espaciado interno para el botón */
+    border: #4CAF50 1px solid;
+    border-radius: 4px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+    display: inline-flex; /* Flexbox para alinear el emoji y el texto */
+    align-items: center; /* Alinear el emoji verticalmente */
+    gap: 8px; /* Espacio entre el emoji y el texto */
+    transition: background-color 0.3s, transform 0.2s; /* Transición suave */
+}
+
+/* Estilo cuando el enlace es hover */
+a.edit-btn:hover {
+    background-color: #45a049; /* Color de fondo verde más oscuro al hacer hover */
+    transform: scale(1.05); /* Efecto de aumento */
+}
+
+/* Estilo cuando el enlace ya ha sido visitado */
+a.edit-btn:visited {
+    color: white; /* Mantener el texto blanco después de ser visitado */
+    background-color: #3e8e41; /* Mantener un tono verde oscuro cuando se haya visitado */
+}
+
+/* Estilo para el emoji */
+a.edit-btn::before {
+    content: "🖉"; /* Emoji de lápiz */
+    font-size: 18px; /* Tamaño del emoji */
+}
+
+/* Estilo para cuando el enlace está deshabilitado */
+a.edit-btn:disabled {
+    background-color: #ccc; /* Color gris cuando esté deshabilitado */
+    color: #666; /* Color gris del texto */
+    cursor: not-allowed; /* Cambiar el cursor cuando esté deshabilitado */
+}
+
+/* Estilos generales para el enlace de "Eliminar" */
+a[href*="delete_id"] {
+    text-decoration: none;         /* Eliminar subrayado */
+    color: red;                    /* Color del texto rojo */
+    font-weight: bold;             /* Texto en negrita */
+    padding: 8px 16px;             /* Espaciado interno */
+    border: 1px solid red;         /* Borde rojo */
+    border-radius: 5px;            /* Bordes redondeados */
+    transition: all 0.3s ease;     /* Transición suave para los cambios */
+    display: inline-flex;          /* Usar flexbox para alinear el texto y el símbolo */
+    align-items: center;           /* Alineación vertical del contenido */
+    gap: 5px;                      /* Espacio entre el texto y el símbolo */
+}
+
+/* Estilo cuando el enlace es hover */
+a[href*="delete_id"]:hover {
+    background-color: red;         /* Fondo rojo al hacer hover */
+    color: white;                  /* Color de texto blanco en hover */
+    transform: scale(1.05);        /* Efecto de ampliación en hover */
+}
+
+/* Estilo cuando el enlace ya ha sido visitado */
+a[href*="delete_id"]:visited {
+    color: red;                    /* Mantener el texto rojo después de ser visitado */
+    background-color: #f5c6cb;     /* Fondo suave después de la visita */
+}
+
+/* Estilo para el emoji de "Eliminar" */
+a[href*="delete_id"]::after {
+    content: " ❌";                 /* Emoji de "X" al final */
+    font-size: 18px;                /* Tamaño del emoji */
+    margin-left: 5px;               /* Espacio entre el texto y el emoji */
 }
