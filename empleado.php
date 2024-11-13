@@ -76,7 +76,14 @@ if (!$result) {
 
 <body>
   <div class="dashboard-container">
-    <?php include 'sidebar.php'; ?>
+    <?php
+    // Verificar si el rol del usuario es 1 (admin) y cargar el sidebar correspondiente
+    if (isset($_SESSION['rol_id']) && $_SESSION['rol_id'] == 1) {
+      include 'sidebar.php'; // Sidebar para admin
+    } else {
+      include 'sidebaruser.php'; // Sidebar para usuarios normales
+    }
+    ?>
     <div class="main-content">
       <header class="topbar">
         <h1>Gestión de Empleados</h1>
@@ -133,13 +140,9 @@ if (!$result) {
                       <td>" . htmlspecialchars($row['estrato']) . "</td>
                       <td>" . htmlspecialchars($row['profesion']) . "</td>
                       <td>" . htmlspecialchars($row['rol_id']) . "</td>
-                      <td>
-                        <a href='empleado_editar.php?cedula=" . htmlspecialchars($row['cedula']) . "' title='Editar' class='btn btn-primary'>
-                          <i class='fa fa-edit'></i>
-                        </a>
-                        <a href='empleado.php?cedula=" . htmlspecialchars($row['cedula']) . "' class='btn btn-danger' onclick='return confirm(\"¿Estás seguro de que quieres eliminar este empleado?\");'>
-                          <i class='fa fa-trash'></i> 
-                        </a>
+                      <td class='lado'>
+                        <a href='empleado_editar.php?cedula=" . htmlspecialchars($row['cedula']) . "' title='Editar' class='edit-btn'>Editar</a> 
+                        <a href='empleado.php?cedula=" . htmlspecialchars($row['cedula']) . "' class='del-btn' onclick='return confirm(\"¿Estás seguro de que quieres eliminar este empleado?\");'>Eliminar</a>
                       </td>
                     </tr>";
               }

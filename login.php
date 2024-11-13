@@ -20,7 +20,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // Consultar la base de datos para verificar si el usuario existe en la tabla `login`
-$sql = "SELECT login.password, usuarios.id, usuarios.nombre 
+$sql = "SELECT login.password, usuarios.id, usuarios.nombre, usuarios.rol_id
         FROM login 
         JOIN usuarios ON login.usuario_id = usuarios.id 
         WHERE login.username = ?";
@@ -45,6 +45,7 @@ if ($result->num_rows > 0) {
     $_SESSION['username'] = $username;  // Almacenar el nombre de usuario en la sesión
     $_SESSION['user_id'] = $user['id']; // Almacenar el ID de usuario en la sesión (opcional)
     $_SESSION['nombre'] = $user['nombre']; // Almacenar el nombre del usuario (opcional)
+    $_SESSION['rol_id'] = $user['rol_id']; // Almacenar el rol del usuario en la sesión
 
     header("Location: home.php");
     exit;
@@ -65,3 +66,4 @@ if ($result->num_rows > 0) {
 
 $stmt->close();
 $conn->close();
+?>

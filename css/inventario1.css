@@ -188,7 +188,7 @@ a.edit-btn:disabled {
 }
 
 /* Estilos generales para el enlace de "Eliminar" */
-a[href*="delete_id"] {
+a[href*="delete_id"], .del-btn {
     text-decoration: none;         /* Eliminar subrayado */
     color: red;                    /* Color del texto rojo */
     font-weight: bold;             /* Texto en negrita */
@@ -202,21 +202,26 @@ a[href*="delete_id"] {
 }
 
 /* Estilo cuando el enlace es hover */
-a[href*="delete_id"]:hover {
+a[href*="delete_id"], .del-btn:hover {
     background-color: red;         /* Fondo rojo al hacer hover */
     color: white;                  /* Color de texto blanco en hover */
     transform: scale(1.05);        /* Efecto de ampliación en hover */
 }
 
 /* Estilo cuando el enlace ya ha sido visitado */
-a[href*="delete_id"]:visited {
+a[href*="delete_id"], .del-btn:visited {
     color: red;                    /* Mantener el texto rojo después de ser visitado */
     background-color: #f5c6cb;     /* Fondo suave después de la visita */
 }
 
 /* Estilo para el emoji de "Eliminar" */
-a[href*="delete_id"]::after {
+a[href*="delete_id"], .del-btn::after {
     content: " ❌";                 /* Emoji de "X" al final */
     font-size: 18px;                /* Tamaño del emoji */
     margin-left: 5px;               /* Espacio entre el texto y el emoji */
+}
+
+.lado{
+    display: flex;
+    flex-direction: row;
 }
