@@ -8,11 +8,11 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['rol_id']) || $_SESSION['r
   exit;
 }
 
-// Configuración de la conexión a la base de datos
-$host = "localhost"; // Cambia según tu configuración
-$user = "root"; // Cambia según tu configuración
-$password = ""; // Cambia según tu configuración
-$database = "empresa_inventario";
+$host = "sql306.infinityfree.com"; // Cambia según tu configuración
+$user = "if0_37701389"; // Cambia según tu configuración
+$password = "mvOCfmjvomz"; // Cambia según tu configuración
+$database = "if0_37701389_empresa_inventario";
+
 
 // Crear conexión
 $conn = new mysqli($host, $user, $password, $database);
@@ -113,7 +113,7 @@ $conn->close();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Añadir Nuevo Empleado</title>
-  
+
   <link rel="stylesheet" href="css/nuevos_dps2.css">
   <style>
     .hidden {
