@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Mostrar mensaje de éxito y redirigir a mantenimiento.php
     echo "<script>
             alert('Registro creado correctamente.');
-            window.location.href = 'mantenimiento.php';
+            window.location.href = 'empleado.php';
           </script>";
   } else {
     die("Error executing statement: " . $stmt->error);
