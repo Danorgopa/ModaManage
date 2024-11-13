@@ -4,7 +4,7 @@ body {
     padding: 0;
     background: url('../img/fondo.png') no-repeat center center fixed;
     background-size: cover;
-    color: #333;
+    color: #fff;
     animation: fadeIn 2s ease-in;
 }
 
