@@ -116,7 +116,7 @@ $totalPrecio = 0; // Variable para almacenar el precio total
                   <td><?php echo htmlspecialchars($row['precio_unitario']); ?> COP</td>
                   <td><?php echo number_format($precioTotal, 2); ?> COP</td>
                   <td>
-                    <a href="edit_product.php?id=<?php echo $row['id']; ?>" class="edit-btn">Editar</a> |
+                    <a href="editar_producto.php?id=<?php echo $row['id']; ?>" class="edit-btn">Editar</a> |
                     <a href="inventario.php?delete_id=<?php echo $row['id']; ?>" onclick="return confirm('¿Está seguro de que desea eliminar este producto?');">Eliminar</a>
                   </td>
                 </tr>
