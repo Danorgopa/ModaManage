@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+// Verificar si el usuario ha iniciado sesión y si tiene el rol adecuado
+if (!isset($_SESSION['username']) || !isset($_SESSION['rol_id']) || $_SESSION['rol_id'] != 1) {
+  // Redirigir a home.php si no tiene rol de administrador (rol_id != 1)
+  header("Location: home.php");
+  exit;
+}
+
 // Configuración de la conexión a la base de datos
 $host = "localhost"; // Cambia según tu configuración
 $user = "root"; // Cambia según tu configuración
@@ -13,7 +22,6 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Obtener los datos del empleado si se proporciona una cédula
 // Obtener los datos del empleado si se proporciona una cédula
 $cedula = "";
 $empleado = null;
@@ -34,7 +42,6 @@ if (isset($_GET['cedula'])) {
   $empleado = $result->fetch_assoc();
   $stmt->close();
 }
-
 
 // Comprobar si se han enviado los datos del formulario para actualizar
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -118,6 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Cerrar la conexión
 $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 

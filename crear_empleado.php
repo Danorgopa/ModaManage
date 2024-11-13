@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+// Verificar si el usuario ha iniciado sesión y si tiene el rol adecuado
+if (!isset($_SESSION['username']) || !isset($_SESSION['rol_id']) || $_SESSION['rol_id'] != 1) {
+  // Redirigir a home.php si no tiene rol de administrador (rol_id != 1)
+  header("Location: home.php");
+  exit;
+}
+
 // Configuración de la conexión a la base de datos
 $host = "localhost"; // Cambia según tu configuración
 $user = "root"; // Cambia según tu configuración
@@ -15,7 +24,7 @@ if ($conn->connect_error) {
 
 // Comprobar si se han enviado los datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Recoger datos del formulario (mismos datos de antes)
+  // Recoger datos del formulario
   $cedula = $_POST['cedula'];
   $primer_nombre = $_POST['primer_nombre'];
   $segundo_nombre = $_POST['segundo_nombre'];
@@ -92,10 +101,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $stmt->close();
 }
 
-
 // Cerrar la conexión
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">

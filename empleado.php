@@ -1,7 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['username'])) {
-  header("Location: index.html");
+
+// Verificar si el usuario ha iniciado sesión y si tiene el rol adecuado
+if (!isset($_SESSION['username']) || !isset($_SESSION['rol_id']) || $_SESSION['rol_id'] != 1) {
+  // Redirigir a home.php si no tiene rol de administrador (rol_id != 1)
+  header("Location: home.php");
   exit;
 }
 
@@ -57,8 +60,6 @@ $result = $conn->query($sql);
 if (!$result) {
   die("Error en la consulta: " . $conn->error);
 }
-
-
 
 ?>
 
