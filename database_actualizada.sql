@@ -108,7 +108,7 @@ fecha_ingreso = VALUES(fecha_ingreso), proveedor_id = VALUES(proveedor_id);
 
 
 ALTER TABLE empleados ADD COLUMN estado INT DEFAULT 1;
-
+ALTER TABLE proveedor ADD COLUMN estado INT DEFAULT 1
 
 
 # codigos para los roles en el registro
